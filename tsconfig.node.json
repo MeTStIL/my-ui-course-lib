@@ -8,9 +8,9 @@
 
     /* Bundler mode */
     "module": "nodenext",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
+    "moduleDetection": "auto",
     "noEmit": true,
 
     /* Linting */

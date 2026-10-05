@@ -40,13 +40,12 @@ export default tseslint.config(
               '^',
               // Относительные импорты (локальные файлы)
               '^\\.',
-              // Side-effect импорты (например, import './App.css')
+              // Side-effect импорты (например '.scss')
               '^\\u0000',
             ],
           ],
         },
       ],
-      'simple-import-sort/exports': 'error',
     },
   },
   eslintConfigPrettier,
