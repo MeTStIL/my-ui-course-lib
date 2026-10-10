@@ -1,0 +1,86 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  outline: none;
+
+  min-width: 140px;
+  line-height: 20px;
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.sizeS {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.sizeM {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.sizeL {
+  height: 52px;
+  padding: 0 24px;
+  font-size: 16px;
+}
+
+
+.fill {
+  background-color: #17171b;
+  color: #ffffff;
+
+  &:hover:not(:disabled, [aria-disabled="true"]) {
+    background-color: #2d2d33;
+  }
+
+  &:active:not(:disabled, [aria-disabled="true"]) {
+    background-color: #050506;
+  }
+}
+
+.outline {
+  background-color: #fcfcfd;
+  border-color: #17171b;
+  color: #17171b;
+
+  &:hover:not(:disabled, [aria-disabled="true"]) {
+    background-color: #f4f4f5;
+  }
+
+  &:active:not(:disabled, [aria-disabled="true"]) {
+    background-color: #e7e7ea;
+  }
+}
+
+.text {
+  background-color: transparent;
+  border-color: transparent;
+  color: #17171b;
+
+  &:hover:not(:disabled, [aria-disabled="true"]) {
+    background-color: #f4f4f5;
+  }
+
+  &:active:not(:disabled, [aria-disabled="true"]) {
+    background-color: #e7e7ea;
+  }
+}

@@ -1,2 +1,2 @@
-export * from './interface';
 export { Button } from './Button';
+export * from './interface';
