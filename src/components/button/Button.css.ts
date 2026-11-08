@@ -7,7 +7,7 @@ export const root = style({
   justifyContent: 'center',
   boxSizing: 'border-box',
   border: '1px solid transparent',
-  borderRadius: themeVars.buttonRadius,
+  borderRadius: themeVars.button.radius,
   fontFamily: 'inherit',
   fontWeight: 600,
   letterSpacing: '-0.1px',
@@ -16,7 +16,6 @@ export const root = style({
   userSelect: 'none',
   transition: 'background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease',
   outline: 'none',
-  minWidth: '140px',
   lineHeight: '20px',
 
   selectors: {
@@ -29,66 +28,78 @@ export const root = style({
 });
 
 export const sizeS = style({
-  height: themeVars.buttonSmallHeight,
-  paddingLeft: themeVars.buttonSmallPaddingX,
-  paddingRight: themeVars.buttonSmallPaddingX,
-  fontSize: themeVars.buttonSmallFontSize,
+  height: themeVars.button.smallHeight,
+  paddingInline: themeVars.button.smallPaddingX,
+  fontSize: themeVars.button.smallFontSize,
 });
 
 export const sizeM = style({
-  height: themeVars.buttonMediumHeight,
-  paddingLeft: themeVars.buttonMediumPaddingX,
-  paddingRight: themeVars.buttonMediumPaddingX,
-  fontSize: themeVars.buttonMediumFontSize,
+  height: themeVars.button.mediumHeight,
+  paddingInline: themeVars.button.mediumPaddingX,
+  fontSize: themeVars.button.mediumFontSize,
 });
 
 export const sizeL = style({
-  height: themeVars.buttonLargeHeight,
-  paddingLeft: themeVars.buttonLargePaddingX,
-  paddingRight: themeVars.buttonLargePaddingX,
-  fontSize: themeVars.buttonLargeFontSize,
+  height: themeVars.button.largeHeight,
+  paddingInline: themeVars.button.largePaddingX,
+  fontSize: themeVars.button.largeFontSize,
+});
+
+export const hasIcon = style({
+  paddingInlineStart: '12px',
+  paddingInlineEnd: '16px',
+  gap: '8px',
+});
+
+export const iconWrapper = style({
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexShrink: 0,
+  width: '16px',
+  height: '16px',
 });
 
 export const fill = style({
-  backgroundColor: themeVars.buttonFillBg,
-  color: themeVars.buttonFillText,
+  backgroundColor: themeVars.button.fillBg,
+  color: themeVars.button.fillText,
 
   selectors: {
     '&:hover:not(:disabled, [aria-disabled="true"])': {
-      backgroundColor: themeVars.buttonFillBgHover,
+      backgroundColor: themeVars.button.fillBgHover,
     },
     '&:active:not(:disabled, [aria-disabled="true"])': {
-      backgroundColor: themeVars.buttonFillBgActive,
+      backgroundColor: themeVars.button.fillBgActive,
     },
   },
 });
 
 export const outline = style({
-  backgroundColor: themeVars.buttonOutlineBg,
-  borderColor: themeVars.buttonOutlineBorder,
-  color: themeVars.buttonOutlineText,
+  backgroundColor: themeVars.button.outlineBg,
+  borderColor: themeVars.button.outlineBorder,
+  color: themeVars.button.outlineText,
 
   selectors: {
     '&:hover:not(:disabled, [aria-disabled="true"])': {
-      backgroundColor: themeVars.buttonOutlineBgHover,
+      backgroundColor: themeVars.button.outlineBgHover,
     },
     '&:active:not(:disabled, [aria-disabled="true"])': {
-      backgroundColor: themeVars.buttonOutlineBgActive,
+      backgroundColor: themeVars.button.outlineBgActive,
     },
   },
 });
 
 export const text = style({
-  backgroundColor: themeVars.buttonTextBg,
+  backgroundColor: themeVars.button.textBg,
   borderColor: 'transparent',
-  color: themeVars.buttonTextText,
+  color: themeVars.button.textText,
 
   selectors: {
     '&:hover:not(:disabled, [aria-disabled="true"])': {
-      backgroundColor: themeVars.buttonTextBgHover,
+      backgroundColor: themeVars.button.textBgHover,
     },
     '&:active:not(:disabled, [aria-disabled="true"])': {
-      backgroundColor: themeVars.buttonTextBgActive,
+      backgroundColor: themeVars.button.textBgActive,
     },
   },
 });

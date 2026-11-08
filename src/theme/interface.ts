@@ -1,60 +1,95 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 
+export type TThemeMode = 'light' | 'dark';
+
 export type TAllowedThemeContextTags = 'div' | 'span';
 
+export type TButtonTokens = {
+  fillBg: string;
+  fillBgHover: string;
+  fillBgActive: string;
+  fillText: string;
+
+  outlineBg: string;
+  outlineBgHover: string;
+  outlineBgActive: string;
+  outlineBorder: string;
+  outlineText: string;
+
+  textBg: string;
+  textBgHover: string;
+  textBgActive: string;
+  textText: string;
+
+  radius: string;
+
+  smallPaddingX: string;
+  smallHeight: string;
+  smallFontSize: string;
+
+  mediumPaddingX: string;
+  mediumHeight: string;
+  mediumFontSize: string;
+
+  largePaddingX: string;
+  largeHeight: string;
+  largeFontSize: string;
+};
+
+export type TCalendarTokens = {
+  bg: string;
+  border: string;
+  radius: string;
+  padding: string;
+
+  headerText: string;
+  weekdayText: string;
+  weekendText: string;
+  divider: string;
+
+  dayRadius: string;
+  dayText: string;
+  dayHoverBg: string;
+  dayActiveBg: string;
+  daySelectedBg: string;
+  daySelectedText: string;
+  dayBorderFocus: string;
+  dayDisabledText: string;
+
+  todayDot: string;
+  todaySelectedDot: string;
+
+  navButtonBg: string;
+  navButtonBorder: string;
+  navButtonHoverBg: string;
+  navButtonActiveBg: string;
+  navButtonIcon: string;
+
+  footerText: string;
+};
+
 export type TThemeTokens = {
-  /** Цвет фона для варианта fill */
-  buttonFillBg?: string;
-  /** Цвет фона для варианта fill при :hover */
-  buttonFillBgHover?: string;
-  /** Цвет фона для варианта fill при :active */
-  buttonFillBgActive?: string;
-  /** Цвет текста для варианта fill */
-  buttonFillText?: string;
+  button?: Partial<TButtonTokens>;
+  calendar?: Partial<TCalendarTokens>;
+};
 
-  /** Цвет фона для варианта outline */
-  buttonOutlineBg?: string;
-  /** Цвет фона для варианта outline при :hover */
-  buttonOutlineBgHover?: string;
-  /** Цвет фона для варианта outline при :active */
-  buttonOutlineBgActive?: string;
-  /** Цвет рамки для варианта outline */
-  buttonOutlineBorder?: string;
-  /** Цвет текста для варианта outline */
-  buttonOutlineText?: string;
+export type TThemeProviderProps<T extends TAllowedThemeContextTags = 'div'> = ComponentPropsWithRef<T> & {
+  /**
+   * Режим темы: 'light' или 'dark'.
+   * @default light
+   */
+  theme?: TThemeMode;
 
-  /** Цвет фона для варианта text */
-  buttonTextBg?: string;
-  /** Цвет фона для варианта text при :hover */
-  buttonTextBgHover?: string;
-  /** Цвет фона для варианта text при :active */
-  buttonTextBgActive?: string;
-  /** Цвет текста для варианта text */
-  buttonTextText?: string;
+  /**
+   * HTML-тег для рендера обертки темы.
+   * @default div
+   */
+  as?: T;
 
-  /** Скругление углов кнопки */
-  buttonRadius?: string;
-
-  /** Горизонтальный отступ кнопки размера S */
-  buttonSmallPaddingX?: string;
-  /** Высота кнопки размера S */
-  buttonSmallHeight?: string;
-  /** Размер шрифта кнопки размера S */
-  buttonSmallFontSize?: string;
-
-  /** Горизонтальный отступ кнопки размера M */
-  buttonMediumPaddingX?: string;
-  /** Высота кнопки размера M */
-  buttonMediumHeight?: string;
-  /** Размер шрифта кнопки размера M */
-  buttonMediumFontSize?: string;
-
-  /** Горизонтальный отступ кнопки размера L */
-  buttonLargePaddingX?: string;
-  /** Высота кнопки размера L */
-  buttonLargeHeight?: string;
-  /** Размер шрифта кнопки размера L */
-  buttonLargeFontSize?: string;
+  /**
+   * Дочерние элементы.
+   */
+  children?: ReactNode;
 };
 
 export type TThemeContextProps<T extends TAllowedThemeContextTags = 'div'> = ComponentPropsWithRef<T> & {

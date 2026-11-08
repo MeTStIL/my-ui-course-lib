@@ -21,17 +21,28 @@ export const Button = <T extends TAllowedButtonTags = 'button'>({
   size = 'M',
   className,
   disabled,
+  icon,
+  children,
   ...otherProps
 }: TButtonProps<T>): ReactElement => {
   const Tag = (as ?? 'button') as ElementType;
 
   return (
     <Tag
-      className={clsx(styles.root, BUTTON_SIZE_MAP[size], BUTTON_VARIANT_MAP[variant], className)}
+      className={clsx(
+        styles.root,
+        BUTTON_SIZE_MAP[size],
+        BUTTON_VARIANT_MAP[variant],
+        Boolean(icon) && styles.hasIcon,
+        className,
+      )}
       disabled={disabled}
       aria-disabled={disabled}
       {...otherProps}
-    />
+    >
+      {icon ? <span className={styles.iconWrapper}>{icon}</span> : null}
+      {children}
+    </Tag>
   );
 };
 

@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef } from 'react';
+import type { ComponentPropsWithRef, ReactNode } from 'react';
 
 export type TAllowedButtonTags = 'a' | 'button';
 
@@ -28,4 +28,9 @@ export type TButtonProps<T extends TAllowedButtonTags = 'button'> = ComponentPro
    * Состояние отключения кнопки.
    */
   disabled?: boolean;
+
+  /**
+   * Иконка, отображаемая перед текстом (start icon).
+   */
+  icon?: ReactNode;
 };
