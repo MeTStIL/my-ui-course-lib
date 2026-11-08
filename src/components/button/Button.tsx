@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType, ReactElement } from 'react';
 import type { TAllowedButtonTags, TButtonProps, TButtonSize, TButtonVariant } from './interface';
-import styles from './styles.module.scss';
+import * as styles from './Button.css';
 
 const BUTTON_SIZE_MAP: Record<TButtonSize, string> = {
   S: styles.sizeS,

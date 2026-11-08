@@ -1,6 +1,8 @@
+import clsx from 'clsx';
 import type { ReactElement } from 'react';
 import type { TButtonSize, TButtonVariant } from './components';
 import { Button } from './components';
+import { defaultThemeClass, ThemeContext } from './theme';
 import './App.css';
 
 const BUTTON_VARIANTS: Array<TButtonVariant> = ['fill', 'outline', 'text'];
@@ -8,7 +10,7 @@ const BUTTON_SIZES: Array<TButtonSize> = ['S', 'M', 'L'];
 
 const App = (): ReactElement => {
   return (
-    <div className="showcase-root">
+    <div className={clsx('showcase-root', defaultThemeClass)}>
       <header className="showcase-header">
         <h1>MeTStIL Design-system</h1>
       </header>
@@ -16,7 +18,39 @@ const App = (): ReactElement => {
       <main>
         <section className="component-section">
           <div className="component-header">
-            <h2>Button</h2>
+            <h2>Button Themes & Customization (&lt;ThemeContext&gt;)</h2>
+            <p className="component-desc">
+              Демонстрация переопределения токенов через каскадный ThemeContext (Zero-Runtime CSS Variables).
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap', padding: '16px 0' }}>
+            <Button size="S">Обычная кнопка без кастомизаций</Button>
+
+            <ThemeContext
+              tokens={{
+                buttonSmallPaddingX: '150px',
+              }}
+            >
+              <Button size="S">Подтюненная кнопка</Button>
+            </ThemeContext>
+
+            <ThemeContext
+              tokens={{
+                buttonRadius: '999px',
+                buttonFillBg: '#e11d48',
+                buttonFillBgHover: '#be123c',
+                buttonFillBgActive: '#9f1239',
+              }}
+            >
+              <Button variant="fill">Pill + Custom Color</Button>
+            </ThemeContext>
+          </div>
+        </section>
+
+        <section className="component-section">
+          <div className="component-header">
+            <h2>Button Matrix</h2>
             <p className="component-desc">
               Используется для инициации действий. Поддерживает полиморфизм (может быть ссылкой).
             </p>
