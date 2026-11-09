@@ -1,4 +1,5 @@
-import { style } from '@vanilla-extract/css';
+import { style, type StyleRule, styleVariants } from '@vanilla-extract/css';
+import type { TButtonSize } from './interface';
 import { themeVars } from '../../theme';
 
 export const root = style({
@@ -27,22 +28,22 @@ export const root = style({
   },
 });
 
-export const sizeS = style({
-  height: themeVars.button.smallHeight,
-  paddingInline: themeVars.button.smallPaddingX,
-  fontSize: themeVars.button.smallFontSize,
-});
-
-export const sizeM = style({
-  height: themeVars.button.mediumHeight,
-  paddingInline: themeVars.button.mediumPaddingX,
-  fontSize: themeVars.button.mediumFontSize,
-});
-
-export const sizeL = style({
-  height: themeVars.button.largeHeight,
-  paddingInline: themeVars.button.largePaddingX,
-  fontSize: themeVars.button.largeFontSize,
+export const sizes = styleVariants<Record<TButtonSize, StyleRule>>({
+  S: {
+    height: themeVars.button.smallHeight,
+    paddingInline: themeVars.button.smallPaddingX,
+    fontSize: themeVars.button.smallFontSize,
+  },
+  M: {
+    height: themeVars.button.mediumHeight,
+    paddingInline: themeVars.button.mediumPaddingX,
+    fontSize: themeVars.button.mediumFontSize,
+  },
+  L: {
+    height: themeVars.button.largeHeight,
+    paddingInline: themeVars.button.largePaddingX,
+    fontSize: themeVars.button.largeFontSize,
+  },
 });
 
 export const hasIcon = style({

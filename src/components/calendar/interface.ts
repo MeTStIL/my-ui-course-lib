@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef } from 'react';
+import type { ComponentPropsWithRef, ReactElement } from 'react';
 
 export type TCalendarProps = Omit<ComponentPropsWithRef<'div'>, 'value' | 'defaultValue'> & {
   /**
@@ -31,6 +31,8 @@ export type TCalendarProps = Omit<ComponentPropsWithRef<'div'>, 'value' | 'defau
    * Максимальная дата, доступная для выбора.
    */
   maxDate?: Date;
+
+  renderItem?: (date: Date) => ReactElement;
 
   /**
    * Функция для выборочного отключения определенных дат.

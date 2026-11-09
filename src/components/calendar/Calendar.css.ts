@@ -39,8 +39,8 @@ export const navButton = style({
   justifyContent: 'center',
   width: '36px',
   height: '36px',
-  minWidth: '36px !important',
-  padding: '0 !important',
+  minWidth: '36px',
+  padding: '0',
   borderRadius: themeVars.calendar.dayRadius,
   border: `1px solid ${themeVars.calendar.navButtonBorder}`,
   backgroundColor: themeVars.calendar.navButtonBg,
@@ -67,6 +67,7 @@ export const navButton = style({
   },
 });
 
+// TODO: убрать в компоненту
 globalStyle(`[dir="rtl"] ${navButton} svg`, {
   transform: 'scaleX(-1)',
 });
@@ -110,6 +111,7 @@ export const emptyCell = style({
 });
 
 export const dayCell = style({
+  // TODO: в обдуманную переменную
   width: '36px',
   height: '36px',
   display: 'inline-flex',
